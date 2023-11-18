@@ -2,14 +2,13 @@ import {
   Card,
   CardBody,
   CardHeader,
+  Flex,
   Heading,
   Skeleton,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { ReactElement } from "react";
-
-import * as S from "./styled";
 
 type StatisticsWidgetProps = {
   helpText: string;
@@ -29,12 +28,12 @@ export function StatisticsWidget({
   return (
     <Card>
       <CardHeader>
-        <S.HeaderContent>
+        <Flex align={"center"} justify={"space-between"}>
           <Heading as={"h4"} size={"lg"}>
             {title}
           </Heading>
           {icon}
-        </S.HeaderContent>
+        </Flex>
       </CardHeader>
       <CardBody>
         <Stack textAlign={"end"}>

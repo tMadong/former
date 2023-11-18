@@ -25,9 +25,10 @@ export function CreateFormModal({ onClose, isOpen }: CreateFormModalProps) {
   return (
     <Modal isCentered isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
+
       <ModalContent>
         <ModalHeader>
-          <Heading as={"p"} size={"lg"}>
+          <Heading as="p" size="lg">
             Create form
           </Heading>
         </ModalHeader>
@@ -36,7 +37,7 @@ export function CreateFormModal({ onClose, isOpen }: CreateFormModalProps) {
 
         <ModalBody>
           <form>
-            <Flex direction={"column"} gap={5}>
+            <Flex direction="column" gap={5}>
               <FormControl>
                 <FormLabel>Name</FormLabel>
                 <Input />
@@ -52,7 +53,7 @@ export function CreateFormModal({ onClose, isOpen }: CreateFormModalProps) {
 
         <ModalFooter>
           <ButtonGroup>
-            <Button onClick={onClose} variant={"ghost"}>
+            <Button onClick={onClose} variant="ghost">
               Cancel
             </Button>
 

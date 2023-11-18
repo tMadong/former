@@ -1,14 +1,24 @@
+import { Flex } from "@chakra-ui/react";
+
 import { Logo } from "./components/Logo";
 import { ThemeSwitcher } from "./components/ThemeSwitcher";
-import * as S from "./styled";
 
 export function Header() {
   return (
     <header>
-      <S.Container>
+      <Flex
+        align={"center"}
+        justify={"space-between"}
+        maxW={"1024px"}
+        mb={"20px"}
+        mx={"auto"}
+        px={"24px"}
+        py={"12px"}
+        w={"full"}
+      >
         <Logo />
         <ThemeSwitcher />
-      </S.Container>
+      </Flex>
     </header>
   );
 }

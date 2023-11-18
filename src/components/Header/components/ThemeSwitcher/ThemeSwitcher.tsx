@@ -1,16 +1,14 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Switch, useColorMode } from "@chakra-ui/react";
-
-import * as S from "./styled";
+import { Flex, Switch, useColorMode } from "@chakra-ui/react";
 
 export function ThemeSwitcher() {
   const { toggleColorMode } = useColorMode();
 
   return (
-    <S.Container>
+    <Flex align={"center"} gap={"10px"} px={"10px"} py={"5px"} rounded={"30px"}>
       <MoonIcon />
       <Switch onChange={toggleColorMode} />
       <SunIcon />
-    </S.Container>
+    </Flex>
   );
 }

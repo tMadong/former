@@ -1,4 +1,5 @@
 import { ContentContainer } from "@/components/ContentContainer";
+import { PageContentLoader } from "@/components/PageContentLoader";
 import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
 import { DndContext } from "@dnd-kit/core";
 
@@ -8,6 +9,12 @@ import { BuilderHeader } from "./BuilderHeader";
 const FORM_ID = 1;
 
 export function Builder() {
+  const isLoading = true;
+
+  if (isLoading) {
+    return <PageContentLoader />;
+  }
+
   if (!FORM_ID) {
     return (
       <Box>
