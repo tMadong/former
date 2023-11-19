@@ -1,7 +1,8 @@
-import { RoutePath } from "@/constants/routes";
 import { ArrowForwardIcon, RepeatIcon } from "@chakra-ui/icons";
 import { Box, Button, ButtonGroup, Flex, Heading } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+
+import { RoutePath } from "#constants/routePath";
 
 export function ErrorPage() {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ export function ErrorPage() {
   const handleRefreshPage = () => {
     navigate(0);
   };
+
   return (
-    <Box style={{ flex: "1" }}>
+    <Box>
       <Flex
         align={"center"}
         direction={"column"}
@@ -24,14 +26,16 @@ export function ErrorPage() {
         w={"full"}
       >
         <Heading as={"h2"}>Something went wrong</Heading>
+
         <ButtonGroup gap={2}>
-          <Button onClick={handleRefreshPage} rightIcon={<RepeatIcon />}>
+          <Button rightIcon={<RepeatIcon />} onClick={handleRefreshPage}>
             Refresh page
           </Button>
+
           <Button
             colorScheme="green"
-            onClick={handleGoHome}
             rightIcon={<ArrowForwardIcon />}
+            onClick={handleGoHome}
           >
             Home
           </Button>

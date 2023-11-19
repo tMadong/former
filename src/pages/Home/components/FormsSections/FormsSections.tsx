@@ -1,7 +1,8 @@
 import { Box, Divider, Grid, GridItem, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { ContentContainer } from "../../../../components/ContentContainer";
+import { ContentContainer } from "#components/ContentContainer";
+
 import { CreateFormButton } from "./components/CreateFormButton";
 import { CreateFormModal } from "./components/CreateFormModal";
 import { FormCard } from "./components/FormCard";

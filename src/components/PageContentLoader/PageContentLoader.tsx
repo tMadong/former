@@ -1,6 +1,6 @@
 import { Flex, Spinner } from "@chakra-ui/react";
 
-import { ContentContainer } from "../ContentContainer";
+import { ContentContainer } from "#components/ContentContainer";
 
 export function PageContentLoader() {
   return (

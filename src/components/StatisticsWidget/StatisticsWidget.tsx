@@ -19,11 +19,11 @@ type StatisticsWidgetProps = {
 };
 
 export function StatisticsWidget({
-  value,
-  title,
-  loading,
-  icon,
   helpText,
+  icon,
+  loading,
+  title,
+  value,
 }: StatisticsWidgetProps) {
   return (
     <Card>

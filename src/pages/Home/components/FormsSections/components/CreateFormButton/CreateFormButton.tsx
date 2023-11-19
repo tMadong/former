@@ -14,9 +14,9 @@ export function CreateFormButton({ onClick }: CreateFormButtonProps) {
       flexDirection={"column"}
       gap={2}
       h={"full"}
-      onClick={onClick}
       variant={"ghost"}
       w={"full"}
+      onClick={onClick}
     >
       <AddIcon h={6} w={6} />
       Create new form

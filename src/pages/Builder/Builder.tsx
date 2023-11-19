@@ -1,15 +1,17 @@
-import { ContentContainer } from "@/components/ContentContainer";
-import { PageContentLoader } from "@/components/PageContentLoader";
 import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
 import { DndContext } from "@dnd-kit/core";
 
-import { BuilderBody } from "./BuilderBody";
-import { BuilderHeader } from "./BuilderHeader";
+import { ContentContainer } from "#components/ContentContainer";
+import { PageContentLoader } from "#components/PageContentLoader";
+
+import { BuilderBody } from "./components/BuilderBody";
+import { BuilderHeader } from "./components/BuilderHeader";
+import { DragOverlayWrapper } from "./components/DragOverlayWrapper";
 
 const FORM_ID = 1;
 
 export function Builder() {
-  const isLoading = true;
+  const isLoading = false;
 
   if (isLoading) {
     return <PageContentLoader />;
@@ -18,7 +20,7 @@ export function Builder() {
   if (!FORM_ID) {
     return (
       <Box>
-        <Heading>Form dont found</Heading>
+        <Heading>Form don t found</Heading>
       </Box>
     );
   }
@@ -32,6 +34,8 @@ export function Builder() {
 
         <BuilderBody />
       </Flex>
+
+      <DragOverlayWrapper />
     </DndContext>
   );
 }

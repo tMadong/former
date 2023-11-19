@@ -21,7 +21,7 @@ type CreateFormModalProps = {
   onClose(): void;
 };
 
-export function CreateFormModal({ onClose, isOpen }: CreateFormModalProps) {
+export function CreateFormModal({ isOpen, onClose }: CreateFormModalProps) {
   return (
     <Modal isCentered isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -53,16 +53,16 @@ export function CreateFormModal({ onClose, isOpen }: CreateFormModalProps) {
 
         <ModalFooter>
           <ButtonGroup>
-            <Button onClick={onClose} variant="ghost">
+            <Button variant="ghost" onClick={onClose}>
               Cancel
             </Button>
 
             <Button
               colorScheme="green"
-              isLoading
               loadingText="Saving"
-              onClick={onClose}
               spinnerPlacement="end"
+              isLoading
+              onClick={onClose}
             >
               Save
             </Button>

@@ -16,9 +16,11 @@ export function BuilderHeader() {
           <Button leftIcon={<ViewIcon />} size={"sm"} variant="outline">
             Preview
           </Button>
+
           <Button leftIcon={<CheckIcon />} size={"sm"} variant="outline">
             Save
           </Button>
+
           <Button colorScheme="linkedin" leftIcon={<ArrowUpIcon />} size={"sm"}>
             Publish
           </Button>

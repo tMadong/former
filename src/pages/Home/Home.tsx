@@ -1,6 +1,7 @@
-import { StatisticsWidget } from "@/components/StatisticsWidget";
 import { EditIcon } from "@chakra-ui/icons";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
+
+import { StatisticsWidget } from "#components/StatisticsWidget";
 
 import { ContentContainer } from "../../components/ContentContainer";
 import { FormsSections } from "./components/FormsSections";
@@ -12,7 +13,7 @@ export function Home() {
         <Grid gap={"12px"} templateColumns="repeat(3, 1fr)">
           <GridItem>
             <StatisticsWidget
-              helpText="Rjkdj gjctnbntktq pf gjcktlybq vtczw"
+              helpText="Кол-во что-то там"
               icon={<EditIcon h={6} w={6} />}
               loading={false}
               title="Total questions"
@@ -21,7 +22,7 @@ export function Home() {
           </GridItem>
           <GridItem>
             <StatisticsWidget
-              helpText="Rjkdj gjctnbntktq pf gjcktlybq vtczw"
+              helpText="Кол-во что-то там"
               icon={<EditIcon h={6} w={6} />}
               loading={false}
               title="Total questions"
@@ -30,7 +31,7 @@ export function Home() {
           </GridItem>
           <GridItem>
             <StatisticsWidget
-              helpText="Rjkdj gjctnbntktq pf gjcktlybq vtczw"
+              helpText="Кол-во что-то там"
               icon={<EditIcon h={6} w={6} />}
               loading={false}
               title="Total questions"

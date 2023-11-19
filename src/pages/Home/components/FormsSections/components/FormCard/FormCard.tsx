@@ -1,4 +1,3 @@
-import { RoutePath } from "@/constants/routes";
 import {
   ArrowForwardIcon,
   CalendarIcon,
@@ -16,20 +15,22 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
+import { RoutePath } from "#constants/routePath";
+
 type FormCardProps = {
+  name?: string;
   createdAt?: string;
   description?: string;
-  name?: string;
   show?: boolean;
   status?: string;
 };
 
 export function FormCard({
-  status = "draft",
-  show = true,
   name = "form name",
-  description = "description text",
   createdAt = "about 1h ago",
+  description = "description text",
+  show = true,
+  status = "draft",
 }: FormCardProps) {
   const navigate = useNavigate();
 
@@ -47,7 +48,7 @@ export function FormCard({
     >
       <Stack mb={4}>
         <Flex align={"center"} justify={"space-between"}>
-          <Heading as={"p"} isTruncated size={"md"} title={name}>
+          <Heading as={"p"} size={"md"} title={name} isTruncated>
             {name}
           </Heading>
           <Badge colorScheme="red" variant={"solid"}>
@@ -78,7 +79,7 @@ export function FormCard({
         <Text noOfLines={2}>{description}</Text>
 
         {show ? (
-          <Button onClick={handleEditForm} rightIcon={<EditIcon />}>
+          <Button rightIcon={<EditIcon />} onClick={handleEditForm}>
             Edit
           </Button>
         ) : (
