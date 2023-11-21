@@ -17,11 +17,11 @@ export type FormElement = {
     // icon: React.ElementType;
     label: string;
   };
-  designerComponent: FC;
+  designerComponent: FC<{ elementInstance: FormElementInstance }>;
 
-  formComponent: FC;
+  formComponent: FC<{ elementInstance: FormElementInstance }>;
 
-  propertiesComponent: FC;
+  propertiesComponent: FC<{ elementInstance: FormElementInstance }>;
 };
 
 export type FormElementsType = {

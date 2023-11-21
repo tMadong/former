@@ -12,6 +12,8 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["react", "perfectionist"],
   rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "perfectionist/sort-objects": [
       "error",
       {
@@ -36,6 +38,7 @@ module.exports = {
         order: "asc",
         groups: [
           "id",
+          "ref",
           "top",
           "multiline",
           "unknown",
@@ -46,6 +49,7 @@ module.exports = {
         ],
         "custom-groups": {
           id: ["id"],
+          ref: ["ref"],
           top: ["type", "key", "name"],
           flags: ["is*"],
           methods: ["on*", "hand*"],
@@ -91,7 +95,14 @@ module.exports = {
 
     "react/react-in-jsx-scope": "off",
 
-    "react/jsx-key": ["error"],
+    "react/jsx-key": [
+      "error",
+      {
+        checkFragmentShorthand: true,
+        checkKeyMustBeforeSpread: true,
+        warnOnDuplicates: true,
+      },
+    ],
 
     "react/function-component-definition": [
       "warn",

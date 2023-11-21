@@ -1,5 +1,11 @@
 import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
-import { DndContext } from "@dnd-kit/core";
+import {
+  DndContext,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 
 import { ContentContainer } from "#components/ContentContainer";
 import { PageContentLoader } from "#components/PageContentLoader";
@@ -13,6 +19,18 @@ const FORM_ID = 1;
 export function Builder() {
   const isLoading = false;
 
+  const mouseSensor = useSensor(MouseSensor, {
+    activationConstraint: {
+      distance: 10,
+    },
+  });
+
+  const touchSensor = useSensor(TouchSensor, {
+    activationConstraint: { delay: 300, tolerance: 5 },
+  });
+
+  const sensors = useSensors(mouseSensor, touchSensor);
+
   if (isLoading) {
     return <PageContentLoader />;
   }
@@ -25,11 +43,12 @@ export function Builder() {
     );
   }
   return (
-    <DndContext>
+    <DndContext sensors={sensors}>
       <Flex direction={"column"} w={"full"}>
         <ContentContainer>
           <BuilderHeader />
         </ContentContainer>
+
         <Divider />
 
         <BuilderBody />

@@ -21,9 +21,9 @@ export function SidebarBtnElement({ formElement }: SidebarBtnElementProps) {
 
   return (
     <Button
+      ref={draggable.setNodeRef}
       h={100}
       p={5}
-      ref={draggable.setNodeRef}
       ring={draggable.active ? 3 : 0}
       ringColor={"white"}
       variant={"solid"}
@@ -60,9 +60,9 @@ export function SidebarBtnElementDragOverlay({
 
   return (
     <Button
+      ref={draggable.setNodeRef}
       h={100}
       opacity={100}
-      ref={draggable.setNodeRef}
       variant={"solid"}
       w={100}
     >

@@ -1,9 +1,4 @@
-import {
-  ArrowForwardIcon,
-  CalendarIcon,
-  EditIcon,
-  ViewIcon,
-} from "@chakra-ui/icons";
+import { CalendarIcon, ViewIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
@@ -13,6 +8,8 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { FiEdit } from "react-icons/fi";
+import { MdRemoveRedEye } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 import { RoutePath } from "#constants/routePath";
@@ -52,7 +49,7 @@ export function FormCard({
             {name}
           </Heading>
           <Badge colorScheme="red" variant={"solid"}>
-            {status}
+            {status}S
           </Badge>
         </Flex>
 
@@ -79,11 +76,11 @@ export function FormCard({
         <Text noOfLines={2}>{description}</Text>
 
         {show ? (
-          <Button rightIcon={<EditIcon />} onClick={handleEditForm}>
+          <Button rightIcon={<FiEdit size={20} />} onClick={handleEditForm}>
             Edit
           </Button>
         ) : (
-          <Button rightIcon={<ArrowForwardIcon />}>View</Button>
+          <Button rightIcon={<MdRemoveRedEye size={20} />}>View</Button>
         )}
       </Stack>
     </Box>

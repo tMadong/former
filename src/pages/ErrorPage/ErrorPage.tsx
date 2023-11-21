@@ -1,5 +1,6 @@
-import { ArrowForwardIcon, RepeatIcon } from "@chakra-ui/icons";
 import { Box, Button, ButtonGroup, Flex, Heading } from "@chakra-ui/react";
+import { GrUpdate } from "react-icons/gr";
+import { IoIosHome } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 import { RoutePath } from "#constants/routePath";
@@ -16,7 +17,7 @@ export function ErrorPage() {
   };
 
   return (
-    <Box>
+    <Box mx={"auto"}>
       <Flex
         align={"center"}
         direction={"column"}
@@ -28,13 +29,13 @@ export function ErrorPage() {
         <Heading as={"h2"}>Something went wrong</Heading>
 
         <ButtonGroup gap={2}>
-          <Button rightIcon={<RepeatIcon />} onClick={handleRefreshPage}>
+          <Button leftIcon={<GrUpdate />} onClick={handleRefreshPage}>
             Refresh page
           </Button>
 
           <Button
             colorScheme="green"
-            rightIcon={<ArrowForwardIcon />}
+            leftIcon={<IoIosHome />}
             onClick={handleGoHome}
           >
             Home

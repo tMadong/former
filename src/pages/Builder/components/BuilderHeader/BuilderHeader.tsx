@@ -1,5 +1,5 @@
-import { ArrowUpIcon, CheckIcon, ViewIcon } from "@chakra-ui/icons";
 import { Box, Button, ButtonGroup, Flex, Text } from "@chakra-ui/react";
+import { MdPublic, MdRemoveRedEye, MdSave } from "react-icons/md";
 
 export function BuilderHeader() {
   return (
@@ -13,15 +13,27 @@ export function BuilderHeader() {
         </Text>
 
         <ButtonGroup gap={2}>
-          <Button leftIcon={<ViewIcon />} size={"sm"} variant="outline">
+          <Button
+            rightIcon={<MdRemoveRedEye size={20} />}
+            size={"sm"}
+            variant="outline"
+          >
             Preview
           </Button>
 
-          <Button leftIcon={<CheckIcon />} size={"sm"} variant="outline">
+          <Button
+            rightIcon={<MdSave size={20} />}
+            size={"sm"}
+            variant="outline"
+          >
             Save
           </Button>
 
-          <Button colorScheme="linkedin" leftIcon={<ArrowUpIcon />} size={"sm"}>
+          <Button
+            colorScheme="linkedin"
+            rightIcon={<MdPublic size={20} />}
+            size={"sm"}
+          >
             Publish
           </Button>
         </ButtonGroup>

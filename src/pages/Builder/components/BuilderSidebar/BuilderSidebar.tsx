@@ -1,14 +1,16 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
-import { FormElements } from "#constants/formElements";
+import { useBuilder } from "#hooks/UseBuilder";
 
-import { SidebarBtnElement } from "./components/SidebarBtnElement/SidebarBtnElement";
+import { FormElementsSection } from "./components/FormElementsSection";
+import { PropertiesSection } from "./components/PropertiesSection";
 
 export function BuilderSidebar() {
+  const { selectedElement } = useBuilder();
+
   return (
-    <Box bg={"gray.900"} p={4} w={400}>
-      <Flex>Elements</Flex>
-      <SidebarBtnElement formElement={FormElements.TextField} />
+    <Box as="aside" bg={"gray.900"} px={6} py={4} w={400}>
+      {selectedElement ? <PropertiesSection /> : <FormElementsSection />}
     </Box>
   );
 }
